@@ -8,19 +8,19 @@ import javax.persistence.*;
 @Entity
 @Setter
 @Getter
-@Table(name = "likes_table")
-public class LikesEntity {
+@Table(name = "board_file_table")
+public class MemberBoardFileEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(length = 50)
+    private String originalFileName;
 
-    //멤버테이블과 조인(멤버 엔티티에 @OneToMany로 연결해주세요~)
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id")
-    private MemberEntity memberEntity;
+    @Column(length = 50)
+    private String storedFileName;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "board_id")
+    @JoinColumn(name = "memberBoard_id")
     private MemberBoardEntity memberBoardEntity;
 }

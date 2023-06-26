@@ -17,7 +17,7 @@ public class AdminBoardEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
     @Column
-    private String tags;
+    private String hashTags;
     @Column
     private String season;
     @Column
@@ -48,6 +48,6 @@ public class AdminBoardEntity {
     @Column
     private Long shoesPrice;
     @OneToMany(mappedBy = "adminBoardEntity", cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.LAZY)
-    private List<BoardFileEntity> boardFileEntityList = new ArrayList<>();
+    private List<AdminBoardFileEntity> adminBoardFileEntityList = new ArrayList<>();
 
 }

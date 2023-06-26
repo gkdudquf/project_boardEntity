@@ -19,7 +19,7 @@ public class MemberBoardEntity {
     @Column(length = 10)
     private String season;
     @Column(length = 50)
-    private Long boardWriter;
+    private String boardWriter;
     @Column(length = 50)
     private String boardTitle;
     @Column(length = 500)
@@ -33,9 +33,9 @@ public class MemberBoardEntity {
     @OneToMany(mappedBy = "memberBoardEntity", cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<AlarmEntity> alarmEntityList = new ArrayList<>();
     @OneToMany(mappedBy = "memberBoardEntity", cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.LAZY)
-    private List<BoardFileEntity> boardFileEntityList = new ArrayList<>();
+    private List<MemberBoardFileEntity> memberBoardFileEntityList = new ArrayList<>();
     @OneToMany(mappedBy = "memberBoardEntity", cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.LAZY)
-    private List<LikesEntity> likesEntityList = new ArrayList<>();
+    private List<BoardLikesEntity> likesEntityList = new ArrayList<>();
     @OneToMany(mappedBy = "memberBoardEntity", cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<CommentEntity> commentEntityList = new ArrayList<>();
 }
